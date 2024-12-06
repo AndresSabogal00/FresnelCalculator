@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Fresnel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    
+  <div class="container">
+    <h2>Calculadora de Fresnel</h2>
+    <h3>Semestre 2024-2 | Andres Sabogal</h3>
+    <div class="form-group">
+      <label for="nInc">Índice de refracción del primer material (nInc):</label>
+      <input type="number" id="nInc" value="1.0" step="0.01" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nSub">Índice de refracción del segundo material + parte imaginaria (nSub):</label>
+      <input type="number" id="nSub" value="1.5" step="0.01" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="calculo">Selecciona el cálculo:</label>
+      <select id="calculo" onchange="generateGraph()">
+        <option value="reflejada">R - Irradiancia Reflejada</option>
+        <option value="amplitud-abs">R - Amplitud Reflejada - Abs</option>
+        <option value="amplitud-real">R - Amplitud Reflejada - Real</option>
+        <option value="amplitud-fase">R - Amplitud Reflejada - Fase</option>
+        <option value="atenuacion">R - Diatenuación Reflejada</option>
+        <option value="retardancia">R - Retardancia Reflejada</option>
+        <option value="amplitud-imaginaria">R - Amplitud Reflejada - Imaginaria</option>
+        <option value="transmitida">T - Irradiancia Transmitida</option>
+        <option value="diatenuacion-transmitida">T - Diatenuación Transmitida</option>
+        <option value="retardancia-transmitida">T - Retardancia Transmitida</option>
+        <option value="amplitud-transmitida-abs">T - Amplitud Transmitida Abs</option>
+        <option value="fase-transmitida">T - Fase de la Amplitud Transmitida</option>
+        <option value="amplitud-transmitida-real">T - Amplitud Transmitida - Componente Real</option>
+        <option value="amplitud-imaginaria">T - Amplitud Transmitida - Componente Imaginaria</option>
+      </select>
+    </div>
+    
+    <button onclick="generateGraph()">Generar Gráfica</button>
+
+    <div id="graph"></div>
+  </div>
+
+  <script src="functionsprovided.js"></script>
+</body>
+</html>
