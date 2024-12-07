@@ -104,7 +104,7 @@ function amplitudeReflectionImaginary(n1, n2, angle) {
     const rsImag = 0; // Sin índice complejo, imaginaria de rs es 0
     const rpImag = 0; // Sin índice complejo, imaginaria de rp es 0
 
-    // Si implementamos índices complejos en el futuro, este cálculo puede cambiar
+    
     return {
         rsImag: rsImag,
         rpImag: rpImag,
@@ -182,11 +182,11 @@ function phaseTransmission(n1, n2, angle) {
     const ts = fresnelTransmission(n1, n2, angle, 's');
     const tp = fresnelTransmission(n1, n2, angle, 'p');
 
-    // Calculamos la fase de cada componente
+    // Calculo de la fase de cada componente
     const phaseTs = Math.atan2(ts.imag, ts.real);  // Fase de Ts
     const phaseTp = Math.atan2(tp.imag, tp.real);  // Fase de Tp
 
-    // Calculamos la diferencia de fase entre las componentes s y p
+    // Calculo de la diferencia de fase entre las componentes s y p
     return phaseTs - phaseTp;  // La diferencia de fase puede ser negativa
 }
 
